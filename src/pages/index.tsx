@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
+import { useTheme } from 'next-themes';
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
 
 const Home: NextPage = () => {
-  const [toggle, setToggle] = useState(false)
-  const handleToggleTheme = () => {setToggle((prev) => !prev)}
-
-  useEffect(() => {
-    document.body.classList.toggle('dark', toggle);
-  },[toggle])
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
+  const toggle = mounted && (theme === 'dark' || resolvedTheme === 'dark')
+  const handleTheme = () => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')
+  useEffect(() => {setMounted(true)}, [])
 
   return (
     <div>
@@ -21,11 +21,11 @@ const Home: NextPage = () => {
         <div className="greeting-container">
           <h1 className="greeting-title">Hello there !</h1>
           <p className="greeting-content">Next.js + Tailwindcss + Scss</p>
-          <div className="p-8">
+          <div className="py-6 pr-1.5">
             <label className="switch">
-              <input type="checkbox" checked={toggle} onChange={handleToggleTheme}></input>
+              <input type="checkbox" checked={mounted} onChange={handleTheme}></input>
               <span className={`${toggle ? "bg-zinc-50": "bg-stone-200"} switch-slider`}>
-               <span className={toggle ? "switch-btn-off" : "switch-btn-on"}></span>
+               <span className={toggle && (theme === 'dark' || resolvedTheme === 'dark') ? "switch-btn-on" : "switch-btn-off"}></span>
               </span>
             </label>
           </div>
