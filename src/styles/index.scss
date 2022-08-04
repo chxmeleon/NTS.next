@@ -1,5 +1,5 @@
 .switch-btn {
-  @apply absolute w-10 h-10 content-[''] left-1 bottom-1 transition-all ease-in-out duration-500 rounded-full;
+  @apply absolute w-10 h-10 content-[''] left-1 bottom-1 transition-all ease-in-out duration-[475ms] delay-75 rounded-full;
 }
 
 .main-container {
@@ -19,6 +19,7 @@
 
   .switch {
     @apply relative inline-block w-64 h-12 p-2 rounded-xl;
+
     input {
       @apply w-0 h-0 opacity-0;
     }
@@ -26,11 +27,11 @@
       @apply absolute inset-0 rounded-3xl cursor-pointer;
 
       .switch-btn-on {
-        @apply switch-btn bg-yellow-400 translate-x-0;
+        @apply switch-btn bg-teal-400 translate-x-0 active:scale-[200%];
       }
 
       .switch-btn-off {
-        @apply switch-btn bg-red-500 translate-x-52;
+        @apply switch-btn bg-yellow-400 translate-x-52 active:scale-[200%];
       }
     }
   }

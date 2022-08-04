@@ -23,9 +23,9 @@ const Home: NextPage = () => {
           <p className="greeting-content">Next.js + Tailwindcss + Scss</p>
           <div className="py-6 pr-1.5">
             <label className="switch">
-              <input type="checkbox" checked={mounted} onChange={handleTheme}></input>
+              <input type="checkbox" checked={mounted} onChange={handleTheme} />
               <span className={`${toggle ? "bg-zinc-50": "bg-stone-200"} switch-slider`}>
-               <span className={toggle && (theme === 'dark' || resolvedTheme === 'dark') ? "switch-btn-on" : "switch-btn-off"}></span>
+               <span className={toggle ? "switch-btn-off" : "switch-btn-on"}></span>
               </span>
             </label>
           </div>
