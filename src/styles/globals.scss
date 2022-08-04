@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.switch-btn {
+  @apply absolute w-10 h-10 content-[''] left-1 bottom-1 transition-all ease-in-out duration-500 rounded-full;
+}
+
+.switch {
+  @apply relative inline-block w-64 h-12 p-2 rounded-xl;
+  input {
+    @apply w-0 h-0 opacity-0;
+  }
+  .switch-slider {
+    @apply absolute inset-0 rounded-3xl cursor-pointer;
+
+    .switch-btn-on {
+      @apply switch-btn bg-red-500 translate-x-0;
+    }
+
+    .switch-btn-off {
+      @apply switch-btn bg-yellow-400 translate-x-52;
+    }
+  }
+}
