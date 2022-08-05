@@ -8,6 +8,7 @@ const Home: NextPage = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
   const toggle = mounted && (theme === 'dark' || resolvedTheme === 'dark')
   const handleTheme = () => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')
+
   useEffect(() => {setMounted(true)}, [])
 
   return (
@@ -22,12 +23,11 @@ const Home: NextPage = () => {
           <h1 className="greeting-title">Hello there !</h1>
           <p className="greeting-content">Next.js + Tailwindcss + Scss</p>
           <div className="py-6 pr-1.5">
-            <label className="switch">
-              <input type="checkbox" checked={mounted} onChange={handleTheme} />
-              <span className={`${toggle ? "bg-zinc-50": "bg-stone-200"} switch-slider`}>
-               <span className={toggle ? "switch-btn-off" : "switch-btn-on"}></span>
+            <button type="button" onClick={handleTheme} aria-label="toggle dark-mode">
+              <span className={`${toggle ? "bg-zinc-100"  : "bg-stone-200" } switch`}>
+                <span className={toggle ? "switch-btn-off" : "switch-btn-on"}></span>
               </span>
-            </label>
+            </button>
           </div>
         </div>
       </main>
