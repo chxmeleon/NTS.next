@@ -29,11 +29,11 @@
     @apply relative inline-block w-64 h-12 rounded-3xl;
 
     .switch-btn-on {
-      @apply switch-btn bg-teal-400 translate-x-0 active:scale-[200%];
+      @apply switch-btn bg-teal-400 translate-x-0 active:w-[15.5rem];
     }
 
     .switch-btn-off {
-      @apply switch-btn bg-yellow-400 translate-x-52 active:scale-[200%];
+      @apply switch-btn bg-yellow-400 translate-x-52 active:w-[15.5rem] active:translate-x-0;
     }
   }
 }
