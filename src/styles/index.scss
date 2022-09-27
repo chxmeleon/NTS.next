@@ -11,7 +11,7 @@
 }
 
 .main-container {
-  @apply relative w-full h-screen flex justify-center items-center dark:bg-gray-900;
+  @apply relative w-full h-screen flex justify-center items-center bg-gray-50 dark:bg-gray-900 transition-all duration-300 ease-in-out;
 
   .greeting-container {
     @apply prose md:prose-lg m-auto text-center tracking-wider text-gray-600 dark:text-orange-100;
